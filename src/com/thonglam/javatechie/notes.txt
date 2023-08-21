@@ -1,0 +1,93 @@
+
+
+Functional Interface :
+-> The interface who contains only one abstract method but can have multiple default
+   and static method is called Functional Interface
+example ->
+  1. Runnable   ----------- run()
+  2. Callable   ----------  call()
+  3. Comparable ---------   compareTo()
+  4. Comparator ---------   compare()
+
+
+
+  18181882
+  i+F_1IPzSL
+  18181882
+  user name:  ngawang2yeshi@gmail.com
+  password :  awan3260
+
+
+Java8 - Consumer, Predicate, Supplier Example  (pre-defined functional interface in java8)
+
+Why we need stream?
+   . Functional Programing
+   . Code Reduce
+   . Bulk Operation
+
+Filter - for conditional check
+forEach - for iteration
+
+Map() & flatMap() -- Both these methods are intermediate methods and return another stream as part of the output.
+. map() method used for transformation
+. flatMap() used to transformation and flattering
+. flatMap() --> map() + flattering
+
+. map() method -> Data Transformation
+       map() takes Stream<T> as input and return Stream<R>
+	   Stream<R> map(Stream<T> input){}
+	      <R> Stream<R> map(Function<? super T, ? extends R> mapper)
+		      It's mapper function produces single value for each input value.
+			  hence it is also called One-To-One mapping.
+.flatMap() method -> map() + Flattering
+         flatMap() takes Stream<Stream<T>> as input and return Stream<R>
+         Stream<R> map(Stream<Stream<T input){}
+           <R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper);
+               It's mapper function produces multiple value for each input value.
+               hence it is also called One-To-Many mapping
+
+Data Transformation                               and                 Flattering
+   Stream.of("a","b","c","d")                       |         [[1,2], [3,4], [5,6], [7,8]]
+               |                                    |                    |
+               |                                    |                    |
+              < >                                   |                   < >
+         [A, B, C, D]                               |         [1, 2, 3, 4, 5, 6, 7, 8]
+     Transform data from lowercase to uppercase     |   convert stream of stream into single stream
+
+
+Optional<?>
+
+What is Map-Reduce ?
+. Map-Reduce is a functional programing model it serves our 2 purpose
+  . Map  -- > Transforming data
+  . Reduce -- > Aggregation data
+  ( combine elements of a tream and produces a single value )
+
+. Ex: Stream: [2,4, 6, 9,1,,3,7]  sum of number present in stream?
+. Map() --> Transform Stream<Object> to Stream of int
+. Reduce() -- > combine stream of int and produce the sum result
+
+Reduce Method:
+  T reduce(T identity, BinaryOperator<T> accumulator);
+1. identity is inital value of type T
+2. accumulator is a function for combining two values
+
+  Integer sumResult = Stream.of(2,4,6,9,1,3,7)
+                      .reduce(0,  (a, b) -> a + b);
+
+  Identity:  0 which is nothing initial value
+  Accumulator: (a,b)->a+b function
+
+
+What is Parallel Streams?
+ (Data Processing and Performance)
+ . Java Parallel Streams is a feature of Java 8, It means for utilizing multiple cores of the processor
+ . Normally any Java code has one stream of processing, where it is executed sequentially. whereas by using
+    parallel streams,  we can divide the code into multiple streams that are executed in parallel on separate
+    cores and the final result is the combination of individual outcomes.
+ . The order of execution, however, is not under our control.
+
+Sequential vs parallel Stream Execution
+
+
+
