@@ -1,0 +1,30 @@
+
+list.stream().filter(name->name.startWith("r")).colloctor(Collections.asList());
+
+
+Comsumer:
+  void accept(T);
+
+Supplier
+
+  t get();
+
+
+class A implement Runnable{
+     requirement analysis and understood the requirements for the modules for development.
+
+Designed and Developed End to End customer self service module using annotation-based Spring Boot
+
+Implemented  Spring Boot based controllers,  configured controllers using Spring Boot annotations and configuration files
+
+Implemented Services Layer using DAO layer.
+
+Configure Spring Security using JWT token base authentication.    provide role base access.
+
+Designed and developed very complex and large web pages using Angular, HTML5 and CSS.
+
+Implemented Auth-guard in angular and provide protection angular route.
+
+	 void run(){
+
+   }
