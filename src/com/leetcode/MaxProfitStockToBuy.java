@@ -20,7 +20,6 @@ public class MaxProfitStockToBuy {
                 minimumSoFar = Math.min(minimumSoFar, prices[i]);
                 System.out.println("minimum so far : " + minimumSoFar);
             }
-
             return ans;
         }
 
