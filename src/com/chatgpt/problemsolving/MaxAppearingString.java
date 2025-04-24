@@ -1,7 +1,11 @@
-package com.thonglam.chatgpt;
+package com.chatgpt.problemsolving;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+/*
+write a java 8 code to count the maximum appearing string in given sentence?
+ */
 
 public class MaxAppearingString {
     public static void main(String[] args) {

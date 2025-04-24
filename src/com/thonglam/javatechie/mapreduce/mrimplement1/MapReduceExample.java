@@ -23,7 +23,7 @@ public class MapReduceExample {
 
 
         Integer reduceSum = numbers.stream().reduce(0, (a, b) -> a + b);
-        System.out.println(reduceSum);
+        System.out.println("reduce sum"+reduceSum);
 
 
         Optional<Integer> reduceSumWithMethodReference = numbers.stream().reduce(Integer::sum);
