@@ -1,14 +1,14 @@
 package codingcrack.leetcode;
 
 
-  /*
-  You have n dice, and each dice has k faces numbered from 1 to k.
+       /*
+          You have n dice, and each dice has k faces numbered from 1 to k.
 
-Given three integers n, k, and target,
-return the number of possible ways (out of the kn total ways)
- to roll the dice, so the sum of the face-up numbers equals target.
- Since the answer may be too large, return it modulo 109 + 7.
-   */
+        Given three integers n, k, and target,
+        return the number of possible ways (out of the kn total ways)
+         to roll the dice, so the sum of the face-up numbers equals target.
+         Since the answer may be too large, return it modulo 109 + 7.
+       */
 
 public class DiceRolls {
 
@@ -32,6 +32,7 @@ public class DiceRolls {
                     // we can consider this face value as the last roll.
                     if (j >= face) {
                         dp[i][j] = (dp[i][j] + dp[i - 1][j - face]) % MOD;
+                        System.out.println(dp[i][j]);
                     }
                 }
             }
@@ -41,9 +42,9 @@ public class DiceRolls {
 
 
     public static void main(String[] args) {
-        int n = 2;       // Number of dice
+        int n = 4;       // Number of dice
         int k = 6;       // Number of faces per dice
-        int target = 7;  // Target sum
+        int target = 16;  // Target sum
 
         int ways = numRollsToTarget(n, k, target);
         System.out.println("Number of ways to reach target: " + ways);

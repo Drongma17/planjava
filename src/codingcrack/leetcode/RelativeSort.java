@@ -16,6 +16,7 @@ public class RelativeSort {
     public int[] relativeSortArray(int[] arr1, int[] arr2){
         int[] cnt = new int[1001];
         for(int num: arr1){
+            System.out.println(num);
             cnt[num] ++;
         }
         int i=0;
