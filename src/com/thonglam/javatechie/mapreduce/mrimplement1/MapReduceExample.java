@@ -44,5 +44,8 @@ public class MapReduceExample {
         Integer integer = numbers.stream().reduce(Integer::sum).get();
         System.out.println(integer);
 
+
+        Integer minmum = numbers.stream().reduce(Integer::min).get();
+        System.out.println(minmum);
     }
 }

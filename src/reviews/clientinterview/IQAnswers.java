@@ -14,15 +14,12 @@ public class IQAnswers {
         List<String> list = Arrays.asList(str.split(" "));
 
       Map<String, Long> map = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        System.out.println(map);
+     //   System.out.println(map);
 //        Function<String, String> fn = Function.identity();
 //        System.out.println(fn.apply("hi"));
 
+        Map<String, Long> collect = Arrays.asList(str.split(" ")).stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(collect);
 
-
-      List<String> strs = Arrays.asList(str.split(" "));
-     Map<String, Long>  map1= strs.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        System.out.println(map1);
     }
 }
