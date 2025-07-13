@@ -3,6 +3,7 @@ package com.thonglam.streamex;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamKeyValEx {
 
@@ -11,6 +12,7 @@ public class StreamKeyValEx {
 
         Map<String, Integer>  studentMap=new HashMap<>();
         studentMap.put("Ngawang", 38);
+
         studentMap.put("Kunsang", 2);
         studentMap.put("Dolma", 39);
 
