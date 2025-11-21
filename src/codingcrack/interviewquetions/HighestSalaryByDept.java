@@ -50,6 +50,7 @@ public class HighestSalaryByDept {
             new Employee(5, "Eve", "HR", 82000)
         );
 
+
         // Group by department and find employee with max salary
         Map<String, Employee> highestPaidByDept = employees.stream()
             .collect(Collectors.groupingBy(

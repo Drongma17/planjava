@@ -53,8 +53,21 @@ public class SmallestSalaryByDepartment {
                 )
             ));
 
+        employees.stream().collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.collectingAndThen(
+                        Collectors.minBy(Comparator.comparingDouble(Employee::getSalary)),
+                        Optional::get
+                )
+        ));
 
-  Map<String, Employee> highestPaidByDepart = employees.stream()
+        Map<String, Optional<Employee>> collects = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+                Collectors.minBy(Comparator.comparingDouble(Employee::getSalary))
+        ));
+
+
+
+        Map<String, Employee> highestPaidByDepart = employees.stream()
                 .collect(Collectors.groupingBy(
                         Employee::getDepartment,
                         Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)),
@@ -68,5 +81,9 @@ public class SmallestSalaryByDepartment {
         lowestPaidByDept.forEach((dept, emp) -> 
             System.out.println("Department: " + dept + ", Lowest Paid: " + emp)
         );
+
+        System.out.println();
+        System.out.println();
+        collects.forEach((x, y)-> System.out.println(x + " department has  = "+ y.get()));
     }
 }

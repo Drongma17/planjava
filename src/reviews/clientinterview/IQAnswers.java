@@ -21,5 +21,24 @@ public class IQAnswers {
         Map<String, Long> collect = Arrays.asList(str.split(" ")).stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(collect);
 
+
+
+        String text = "hello my friends la";
+
+// 1. Get an IntStream of character codes
+// 2. Map the codes back to Character objects
+// 3. Collect them into a Map
+        Map<Character, Long> charCounts = text.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(
+                        Function.identity(), // Classifier: The character itself becomes the key
+                        Collectors.counting()  // Downstream Collector: Counts occurrences for each key
+                ));
+
+        System.out.printf(charCounts.entrySet().toString());
+
+
+        System.out.printf(text.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().toString());
+
     }
 }

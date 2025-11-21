@@ -10,6 +10,7 @@ public class Task1 {
         }
 
         String mid = str.substring(1, str.length() - 1).replace("x", "");
+        System.out.printf("what is value "+mid);
         System.out.println(str.charAt(str.length()-1));
         return str.charAt(0) + mid + str.charAt(str.length() - 1);
     }
