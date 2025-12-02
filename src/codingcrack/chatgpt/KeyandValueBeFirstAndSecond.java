@@ -10,17 +10,21 @@ public class KeyandValueBeFirstAndSecond {
 
 
     private static Map<Integer, Integer> processInt(List<Integer> list){
+
+        Double collect = list.stream().map(i -> i * 2).collect(Collectors.averagingDouble(Integer::intValue));
+
         return IntStream.range(0, list.size())
                 .boxed()
                 .collect(Collectors.toMap(
                         i-> list.get(i),
                         i ->{
                             int current = list.get(i);
-                                    int nextNumber = (i < list.size() -1) ? list.get(i + 1) : 0;
+                            int nextNumber = (i < list.size() -1) ? list.get(i + 1) : 0;
                             return current + nextNumber;
                         }
                 ));
     }
+
 
     public static void main(String[] args) {
 
@@ -31,7 +35,6 @@ public class KeyandValueBeFirstAndSecond {
 
         Map<Integer, Integer> integerIntegerMap = processInt(list);
         System.out.println(integerIntegerMap.entrySet().toString());
-
 
     }
 }
