@@ -16,9 +16,6 @@ class CountOfSumOfTwoEqualToK {
                 right--;
             }
             else if(sum>k){
-                right--;
-            }
-            else{
                 left++;
             }
         }
