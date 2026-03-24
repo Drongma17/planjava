@@ -20,10 +20,18 @@ public class codingChallenge {
         String str ="ganegan";
 
         Map<String, Long> collect = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        System.out.println(collect);
+      //  System.out.println(collect);
 
         List<String> li = Arrays.asList("aba", "cba", "ete");
         List<String> collectPalindrom = li.stream().filter(x -> x.equals(new StringBuilder(x).reverse().toString())).collect(Collectors.toList());
-        System.out.println(collectPalindrom);
+      //  System.out.println(collectPalindrom);
+
+        List<String> strings = Arrays.asList("abc", "abcd", "abcde");
+        strings.stream().reduce((a,b) ->{
+            if(a.length() > b.length()) return a;
+            else return b;
+        }).get();
+        System.out.println(strings);
+
     }
 }
